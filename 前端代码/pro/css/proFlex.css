@@ -1,0 +1,64 @@
+img{
+	width: 100%;
+	height: auto;
+}
+
+.Fonsi{
+	font-size:14px;
+}
+
+
+.Rig{
+	float: right;
+}
+
+.Lef{
+	float: left;
+}
+
+.byC{
+	background-color: rgb(225,72,34);
+	padding: 5px;
+	border-radius:10px 0 0 10px;	
+	color: white;
+	text-shadow: none;
+	cursor: pointer;
+	width: 90px;
+    height: 25px;
+    text-align: center;
+    line-height:2;
+}
+
+.liJ{
+	background-color: rgb(225,152,0);
+	padding:5px;
+	border-radius:0 10px 10px 0;	
+	color: white;
+	text-shadow: none;
+	cursor: pointer;
+	margin-right:5px;
+	width: 90px;
+    height: 25px;
+    text-align: center;
+    line-height:2;
+}
+
+#BigRig{
+	width: 100%;
+    background-color: #f7f7f7;
+    height: 35px;
+    padding: 10px 0px;
+}
+
+.pi{
+	float: left;
+	padding:5px;	
+	color:#F15928 ;
+	text-shadow: none;
+	margin-right:5px;
+	width: 90px;
+    height: 25px;
+    text-align: center;
+    line-height:2;
+    font-weight: bold;
+}

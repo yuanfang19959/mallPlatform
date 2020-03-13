@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Page Title</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style type="text/css">
+			.nav {
+				transform: translate3d(0px, 0px, 0px);
+				min-height: 42px;
+				background-image: linear-gradient(#9a1c1c, #d85945);
+				text-align: center;
+				display: flex;
+				justify-content: space-between;
+				position: fixed;
+				width: 100%;
+				z-index: 100;
+			}
+
+			.clear {
+				height: 42px;
+			}
+
+			body {
+				margin: 0;
+				padding: 0;
+			}
+
+			.nav span {
+				position: absolute;
+				left: 50%;
+				margin-left: -100px;
+				width: 200px;
+				height: 34px;
+				margin-top: 5px;
+				font: 1.25em/34px "microsoft yahei";
+				color: rgba(255, 255, 255, 0.95);
+				overflow: hidden;
+				text-align: center;
+			}
+
+			.left {
+				font-size: 16px;
+				color: white;
+				padding-right: 8px;
+				padding-top: 12px;
+			}
+
+			.right img {
+				width: 20px;
+				height: 20px;
+				position: absolute;
+				top: 14px;
+				left: 7px;
+				border-radius: 20px;
+			}
+
+			.cotent {
+				padding: 10px 20px;
+				background-color: #fff;
+			}
+
+			.cont {
+				display: flex;
+				justify-content: flex-start;
+				margin: 10px;
+				background-color: #d8ecb6;
+				padding: 10px;
+				border-radius: 8px;
+			}
+
+			.btn img {
+				width: 25px;
+				height: 25px;
+				position: relative;
+				top: 28px;
+				border-radius: 25px;
+			}
+
+			.btn2 img {
+				width: 25px;
+				height: 25px;
+				position: relative;
+				top: 15px;
+				border-radius: 25px;
+				left: 21px;
+			}
+
+			#redp {
+				margin: 0 20px 0 15px;
+				display: inline-block;
+				border-radius: 10px;
+			}
+
+			.leftcont p {
+				margin-top: 0;
+				margin-bottom: 30px;
+
+			}
+
+			.leftcont span {
+				font-size: 15px;
+				color: red;
+			}
+
+			.bottom {
+				display: flex;
+				justify-content: space-between;
+				background-color: #efdcdc;
+				height: 53px;
+				position: fixed;
+				width: 100%;
+				bottom: 0;
+			}
+
+			.del {
+				width: 134px;
+				text-align: center;
+				background-color: red;
+				color: white;
+				font-size: 18px;
+				padding: 14px;
+			}
+		</style>
+		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+		<script src="js/vue-resource-1.3.4.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<!-- 头部 -->
+			<div class="nav">
+				<div class="right" onClick="javascript :history.back(-1);">
+					<img src="./img/bk.png" alt="">
+				</div>
+				<span>
+					我的收藏
+				</span>
+				<div class="left" v-show="flag" @click="change">管理</div>
+				<div class="left" v-show="!flag" @click="change">完成</div>
+			</div>
+			<div class="clear"></div>
+			<!-- 内容区域 -->
+			<div class="content">
+				<div class="cont" v-for="(item,index) in list" :key="item.id">
+					<div class="btn" v-show="!flag" @click="checkOne(index)">
+						<img src="./img/check.png" alt="" v-show="!item.ischecked">
+						<img src="./img/unchecked.png" alt="" v-show="item.ischecked">
+					</div>
+					<img :src="item.pic" alt="" id="redp">
+					<div class="leftcont">
+						<p>{{item.name}}</p>
+						<span>¥{{item.price}}</span>
+					</div>
+				</div>
+				<div class="bottom" v-show="!flag">
+					<!-- <div class="btn2" v-show="!flag" @click="checkAll()">
+						<img src="./img/check.png" alt="" v-show="!isAll">
+						<img src="./img/unchecked.png" alt="" v-show="isAll">
+					</div> -->
+					<div class="del" @click="del">
+						删除
+					</div>
+				</div>
+				<!-- </div> -->
+			</div>
+			<script>
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						flag: true,
+						isAll: false,
+						list: []
+					},
+					methods: {
+						get() {
+							var phone = localStorage.getItem('tel')
+							this.list = JSON.parse(localStorage.getItem(phone));
+							this.list.map(item => {
+								this.$set(item, 'ischecked', false)
+							})
+						},
+						change() {
+							this.flag = !this.flag;
+						},
+						checkOne(index) {
+							this.list[index].ischecked = !this.list[index].ischecked
+							console.log(this.list[index])
+						},
+						checkAll() {
+							this.isAll = !this.isAll;
+						},
+						del() {
+							var phone = localStorage.getItem('tel')
+							let indexs = [] //用于存放索引的数组
+							this.list.map((item, index) => {
+								if (item.ischecked) {
+									indexs.push(index)
+								}
+							})
+							var newIndexs = indexs.map((val, idx)=>{
+								return val - idx;
+							})
+							newIndexs.forEach(index=>{
+								this.list.splice(index, 1)
+							})
+							localStorage.setItem(phone,JSON.stringify(this.list))
+						}
+					},
+					created() {
+						// var phone = localStorage.getItem('tel')
+					},
+					mounted() {
+						this.get();
+					}
+				})
+			</script>
+	</body>
+
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="no-js">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no">
+		<title>确认订单</title>
+		<link rel="stylesheet" href="css/ma.css" />
+		<link rel="stylesheet" href="css/buycar.css">
+		<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/layer.js"></script>
+		<script src="js/jsuan.js"></script>
+		<style type="text/css">
+			.title {
+				color: #10a6e2;
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="user-b">
+			<nav class="j-nav navbar">
+				<div class="logo fl">
+					<a href="javascript:history.back(-1)" class="back"></a>
+				</div>
+				<span class="user-title">确认订单</span>
+			</nav>
+			<div class="pay-box">
+				<div class="pay-m pay-site" id="apple">
+					<a href="javascript:void(0);">
+						<div class="pay-site-left fl">收货人:&nbsp;</br>地&nbsp;&nbsp;址：</div>
+						<div class="phone"><b>电话：</b><span id="phone">15267081012</span></div>
+						<div class="pay-site-right">
+							<p id="name">郑智斌</p>
+							<p id="address">浙江省杭州市西湖区留和路299号浙江外国语学院</p>
+						</div>
+					</a>
+				</div>
+				<div id="apple2">
+					<img class="add1" src="img/a1.jpg">
+				</div>
+				<div class="h"></div>
+				<div class="pay-freight text-right">
+					<p>快递:&nbsp;<span>￥0.00</span>&nbsp;总价:&nbsp;&nbsp;<b id="bigP">14.00</b></p>
+				</div>
+				<div class="pay-m">
+					<form class="am-form">
+						<div class="am-g">
+							<div class="pay-mu">
+								<div class="pay-input-group pay-input-group-success">
+									<span class="pay-input-group-label">
+										<input type="checkbox" name="doc-radio-1" value="option1" class="fuk">
+									</span>
+									<div class="pay-manner">微信支付</div>
+								</div>
+							</div>
+							<div class="pay-mu">
+								<div class="pay-input-group pay-input-group-secondary">
+									<span class="pay-input-group-label">
+										<input type="checkbox" name="doc-radio-1" value="option2" class="cao">
+									</span>
+									<div class="pay-manner pay-manner2">支付宝支付</div>
+								</div>
+							</div>
+						</div>
+						<a class="btn">立即支付</a>
+					</form>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript">
+			$(document).ready(function() {
+				$('.fuk').click(function() {
+					$(".cao").attr('checked', false);
+				})
+
+				$('.cao').click(function() {
+					if ($(".cao").attr('checked', true)) {
+						$(".fuk").attr('checked', false);
+					}
+					$(".fuk").attr('checked', false);
+				})
+			})
+		</script>
+
+	</body>
+</html>

@@ -1,0 +1,96 @@
+.footer {
+	width: 100%;
+
+	height: 60px;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	overflow: hidden;
+	background-color: #FFF;
+	border-top: medium none #ECEDED;
+	box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+	z-index: 10;
+	margin: 0 auto;
+
+}
+
+ul {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0;
+	border: none;
+	list-style: none;
+
+
+}
+
+.footer li {
+	float: left;
+	width: 33%;
+	text-align: center;
+	margin-top: 10px;
+	height: 100%;
+}
+
+li a {
+	text-decoration: none;
+	color: black;
+	font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+
+.footer a.active {
+	color: #2ad2c9;
+}
+
+.footer .nav-controller {
+	position: relative;
+	height: 100%;
+	display: block;
+}
+
+
+.fb-home,
+.fb-group,
+.fb-list,
+.fb-user {
+	background-image: url("../img/footer-icon.png");
+	background-repeat: no-repeat;
+	background-size: 30px auto;
+	height: 31px;
+	margin: -3px auto auto;
+	width: 30px;
+	background-position: 0px 4px;
+}
+
+.fb-home {
+	background-position: 0px -124px;
+}
+
+.active .fb-home {
+	background-position: 0px 0;
+}
+
+.fb-group {
+	background-position: 0px -156px;
+}
+
+.active .fb-group {
+	background-position: 0px -31px;
+}
+
+.fb-list {
+	background-position: 0px -187px;
+}
+
+.active .fb-list {
+	background-position: 0px -62px;
+}
+
+.fb-user {
+	background-position: 0px -218px;
+}
+
+.active .fb-user {
+	background-position: 0px -92px;
+}

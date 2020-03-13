@@ -1,0 +1,17 @@
+.btn{
+		text-align: center;
+	}
+
+.show,.pho,.pas{
+  color:red;
+    font-size: 1px;
+    width: 80px;
+    float:right;
+ }
+ 
+img{
+    width:100%;
+    height:30%;
+    display: block;
+    margin: 0 auto;
+  }

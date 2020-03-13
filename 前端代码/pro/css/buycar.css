@@ -1,0 +1,185 @@
+.pic1 img{
+    width:100%;
+    height:auto;
+  }
+
+.emp{
+  display: inline-block;
+  left: 0;
+}
+
+.price{
+  float: right;
+  color: red;
+}
+
+.tit{
+  width: 100%;
+}
+
+/* -------------------以下购物车单个商品div样式------------------------------*/
+.car1,.car2,.car3{
+	border-radius: 8px;
+	background-color:rgb(255,255,255);
+	padding:10px;
+	position: relative;
+	margin-bottom:10px;
+ 
+} 
+
+.car1:hover{
+	box-shadow:1px 1px 20px black;
+}
+
+.title{
+	display: inline;
+	top: 10px;
+	position: absolute;
+	left: 110px;
+	font-size: 15px;
+}
+
+.car img{
+	display: inline;
+}
+
+.price{
+	color: #FC491C;
+	font-size: 13px;
+	position: absolute;
+	top:70px;
+	left:110px;
+}
+
+.delete{
+	color:#868570;
+	font-size: 13px;
+	position: absolute;
+	top:70px;
+	right: 10px;
+}
+
+.delete:hover{
+	cursor: pointer;
+}
+
+.alter{
+  color:#868570;
+  font-size: 13px;
+  position: absolute;
+  top:70px;
+  right: 40px;
+}
+
+.alter:hover{
+  cursor: pointer;
+}
+/* --------------------------------------------- */
+.emp{
+  display: inline-block;
+  left: 0;
+}
+
+.price{
+  float: right;
+  color: red;
+}
+
+.tit{
+  width: 100%;
+}
+
+.gou{
+ 
+  border-radius:15px;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  top:56px;
+  right:10px;
+  cursor: pointer;
+}
+
+
+.lJ{
+	background-color: rgb(225,152,0);
+	padding:5px;
+	border-radius:10px;	
+	color: white;
+	text-shadow: none;
+	cursor: pointer;
+	margin-right:5px;
+	width: 90px;
+    height: 25px;
+    text-align: center;
+    line-height:2;
+}
+
+.Fonsi{
+	font-size:14px;
+}
+
+.Rig{
+  float: right;
+}
+
+.pi{
+	float: left;
+	padding:5px;	
+	color:#F15928 ;
+	text-shadow: none;
+	margin-right:5px;
+	width: 90px;
+    height: 25px;
+    text-align: center;
+    line-height:2;
+    font-weight: bold;
+}
+
+#BigRig{
+	    width: 100%;
+    background-color: #f7f7f7;
+    height: 35px;
+    padding: 10px 0px;
+    position: fixed;
+    bottom: 62px;
+    left: 0px;
+}
+
+  #myCarousel {
+      width: 300px;
+    }
+    /*调整圆圈链接ol位置*/
+    .carousel-indicators {
+      bottom: -5px;
+    }
+    /*调整轮播图位置*/
+    #carousel-example-generic {
+      top:0px; 
+    }
+
+    .rmb{
+      color: red!important;
+    }
+
+    .rmb:hover{
+      text-decoration: none;
+    }
+
+    /* #cvb{
+      padding: 0px!important;
+    } */
+
+
+    .carousel-indicators{
+      bottom: -6px!important;
+    }
+
+    .con{
+      width: 100%;
+      height: auto;
+    }
+
+    .con:hover{
+      cursor: pointer;
+    }

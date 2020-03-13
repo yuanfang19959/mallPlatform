@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0 user-scalable=no">
+		<link rel="stylesheet" href="css/proFlex.css">
+		<link rel="stylesheet" href="dist/css/swiper.min.css">
+		<script src="http://libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+		<script src="js/layer.js"></script>
+		<script src="js/proFlex.js"></script>
+		<script src="js/jquery.lazyload.min.js"></script>
+		<script src="https://cdn.staticfile.org/vue/2.4.2/vue.min.js"></script>
+		<style type="text/css">
+			#head {
+				left: 0px;
+				text-align: center;
+				position: fixed;
+				top: 0px;
+				width: 100%;
+				line-height: 42px;
+				color: white;
+				font: 1.1em/42px "microsoft yahei";
+				min-height: 42px;
+				background-image: linear-gradient(#9a1c1c, #d85945);
+				z-index: 100;
+			}
+
+			body {
+				padding: 0;
+				-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+				background-image: linear-gradient(#f9f9f9, #eee);
+
+			}
+
+			.swiper-container img {
+				margin: 0 auto;
+				display: block;
+				width: 100%;
+			}
+
+			.op {
+				height: 34px;
+			}
+
+			.toBuyCar {
+				right: 9px;
+				position: absolute;
+			}
+
+			.pio {
+				width: 20px;
+				position: absolute;
+				left: 7px;
+				top: 15px;
+			}
+
+			#BigRig {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				background-color: #fff;
+			}
+
+			.proName {
+				font-size: 15px;
+			}
+
+			.title1 {
+				text-align: center;
+				height: 30px;
+				line-height: 30px;
+				color: white;
+				font: 1.0em/30px "microsoft yahei";
+				background-image: linear-gradient(#9a1c1c, #d85945);
+			}
+
+			.but {
+				position: absolute;
+				bottom: 20px;
+				width: 70%;
+				background: #EA6E12;
+				color: white;
+				height: 35px;
+				line-height: 35px;
+				text-align: center;
+				border-radius: 10px;
+				cursor: pointer;
+			}
+
+			.bigbut {
+				width: 70%;
+				margin: 0 auto;
+			}
+
+			.plus {
+				position: absolute;
+				right: 10px;
+				top: 20px;
+			}
+
+			.conut {
+				position: absolute;
+				left: 10px;
+				top: 17px;
+			}
+
+			.plus a {
+				font-size: 18px;
+				width: 20px;
+				height: 20px;
+				background: #efeaea;
+				padding: 10px;
+				cursor: pointer;
+			}
+
+			.mid {
+				border: 1px solid white;
+			}
+
+			.plus a:hover {
+				background: #BFB8B8;
+				cursor: pointer;
+			}
+
+			#app {
+				width: 31px;
+				height: 31px;
+				position: absolute;
+				left: 107px;
+			}
+
+			.toast {
+				position: absolute;
+				top: -366px;
+				width: 100px;
+				left: 50%;
+				/* margin-left:-10px ; */
+				font-size: 22px;
+				color: white;
+				background-color: rgba(4, 0, 0, 0.5);
+				/* height: 100px; */
+				text-align: center;
+				border-radius: 10px;
+				padding: 15px;
+			}
+			.toast span{
+				display: block;
+			}
+			.love{
+				width: 50px;
+				
+			}
+		</style>
+	</head>
+	<body>
+		<div data-role="page" id="index">
+			<div id="head">
+				<a class="backToindex"><img class="pio" src="img/back.png"></a>
+				商品详情
+				<a class="toBuyCar">购物车</a>
+			</div>
+			<div class="op"></div>
+			<div class="swiper-container">
+				<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<img class="pic1" src="">
+					</div>
+					<div class="swiper-slide">
+						<img class="pic1" src="">
+					</div>
+					<div class="swiper-slide">
+						<img class="pic1" src="">
+					</div>
+				</div>
+				<div class="swiper-pagination"></div>
+			</div>
+			<script src="dist/js/swiper.min.js"></script>
+			<div data-role="content">
+				<h3 class="proName">Apple/苹果 iPhone XS 双卡 二手九九新</h3>
+				<div class="fath">
+					<div class="Fonsi Rig">快递：包邮</div>
+					<div class="Fonsi Lef">杭州-千岛湖</div>
+				</div>
+			</div>
+			<br>
+			<div data-role="footer">
+				<div class="title1">详情</div>
+				<img id="pic2" class="lazy" width="1000" height="60" data-original="" />
+				<img id="pic3" class="lazy" width="1000" height="60" data-original="" />
+				<img id="pic4" class="lazy" width="1000" height="60" data-original="" />
+				<img id="pic5" class="lazy" width="1000" height="60" data-original="" />
+			</div>
+			<div data-role="navbar" data-position="fixed" data-tap-toggle="false">
+				<div id="BigRig">
+					<div class="pi">¥6988</div>
+					<div id="app">
+						<img src="img/red.png" v-show="uflag" @click="remove">
+						<img src="img/white.png" v-show="!uflag" @click="collection">
+
+						<div class="toast" v-show="flagu">
+							<img src="img/love.png" class="love" v-show="shot">
+							<span>{{msg}}</span>
+							
+						</div>
+					</div>
+					<div class="Rig">
+						<div class="byC Lef Fonsi" id="addCar">加入购物车</div>
+						<div class="liJ Rig Fonsi" id="rightNow">立即购买</div>
+					</div>
+				</div>
+			</div>
+			<script>
+				var mySwiper = new Swiper('.swiper-container', {
+					direction: 'horizontal', // 垂直切换选项
+					loop: true, // 循环模式选项
+					autoplay: {
+						delay: 3500, //1秒切换一次 
+						disableOnInteraction: false,
+					},
+					effect: "flip",
+					pagination: {
+						el: '.swiper-pagination',
+						type: 'progressbar',
+						progressbarOpposite: false,
+					},
+				})
+			</script>
+			<script type="text/javascript">
+				var vm = new Vue({
+					el: '#app',
+					data: {
+						uflag: false,
+						arr: [],
+						name: "",
+						pic: "",
+						price: "",
+						phone: "",
+						id: "",
+						msg: "收藏成功",
+						flagu:false,
+						shot:false
+					},
+					methods: {
+						remove() {
+							this.uflag = false
+							this.arr = JSON.parse(localStorage.getItem(this.phone));
+							if (this.arr.length > 0) {
+								this.arr.map((item, index) => {
+									if (item.id == this.id) {
+										this.arr.splice(index, 1)
+									}
+								})
+								localStorage.setItem(this.phone, JSON.stringify(this.arr))
+							}
+							this.msg="取消成功"
+							this.flagu = true;
+							setTimeout(()=>{
+								this.flagu = false
+							},1500)
+						},
+						collection() {
+							this.uflag = true;
+							// let temp=[];
+							this.arr.push({
+								id: this.id,
+								name: this.name,
+								pic: this.pic,
+								price: this.price
+							});
+							localStorage.setItem(this.phone, JSON.stringify(this.arr))
+							this.arr = JSON.parse(localStorage.getItem(this.phone));
+							console.log(this.arr)
+							this.msg="收藏成功"
+							this.flagu = true;
+							this.shot = true
+							setTimeout(()=>{
+								this.flagu = false;
+								this.shot = false;
+							},1500)
+						}
+					},
+					created() {
+						this.name = sessionStorage.getItem('thisName');
+						this.pic = sessionStorage.getItem('thisPic');
+						this.price = sessionStorage.getItem('thisPrice');
+						this.phone = sessionStorage.getItem('phone');
+						this.id = sessionStorage.getItem('spID')
+					},
+					mounted() {
+						this.arr = JSON.parse(localStorage.getItem(this.phone));
+						this.arr.map(item => {
+							if (item.id == this.id) {
+								this.uflag = true;
+							}
+						})
+					}
+				})
+			</script>
+	</body>
+</html>
